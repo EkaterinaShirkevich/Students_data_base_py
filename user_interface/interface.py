@@ -1,13 +1,17 @@
-'''
+
 def main_menu():
-	
+    print('-' * 50)
+
+def menu_stdn_manager():
+    print('-' * 50)
 
 
-def export_menu():
-	
+def menu_stdn_info():
+    print('-' * 50)
+
 
 def import_menu():
-	
+    print('-' * 50)
 
 
 def error():
@@ -16,8 +20,6 @@ def error():
 	print('-' * 50)
 
 
-def menu_contact_actions():
-	
 
 
 def exit_menu():
@@ -26,4 +28,4 @@ def exit_menu():
 	print('-' * 50)
 	print('1. Выход в главное меню')
 	print('2. Выход из программы')
-'''
+
