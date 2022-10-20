@@ -1,42 +1,43 @@
-import user_interface as us_if
-import input as inp
-import model.add_student as add
-
+from user_interface import interface as us_if, input as inp
+from model import cud_students as cud, get_info as s_all
+from querys import crud
 
 # запуск приложения
 def run():
+	crud.db_create()
 	print('=' * 50)
 	print('Добро пожаловать в нашу базу данных')
-	
+
 	while (True):
 		us_if.main_menu()	# основное меню
 		i = inp.choice_menu_input(4)	# ввод выбора действия
-		
+
 		if i == 1:
 			us_if.menu_data_actions()   # меню действий с контактов(создание/удаление)
 			i = inp.choice_menu_input(5)	# ввод выбора действия
 			if i == 1:
-				# log.oper_logger('Создать данные') 
+				# log.oper_logger('Создать данные')
 				print('-' * 50)
 				print('Вы выбрали "Создать данные"')
 				print('-' * 50)
 				add.add()
 				# создать данные
-				
+				cud.add()
+
 			elif i == 2:
 				# log.oper_logger('Изменить данные')
 				print('-' * 50)
 				print('Вы выбрали "Изменить данные"')
 				print('-' * 50)
-                
-				# Изменить данные
+				cud.update_stdn()
+
 			elif i == 3:
 				# log.oper_logger('Удалить данные')
 				print('-' * 50)
 				print('Вы выбрали "Удалить данные"')
 				print('-' * 50)
-				# удалить данные
-            
+				cud.del_stdn()
+
 			elif i == 4:
 				# log.oper_logger('Возврат в главное меню')
 				print('-' * 50)
@@ -59,20 +60,22 @@ def run():
 				print('Вы выбрали "Вывод всех данных"')
 				print('-' * 50)
 				# показать все данные
+				s_all.show_all_info()
 			elif i == 2:
 				# log.oper_logger('Вывод информации о контакте')
 				print('-' * 50)
 				print('Вы выбрали "Вывод данных по указанным фамилии и имени"')
 				print('-' * 50)
 				# показать отдельно взятый контакт по имени и фамилии
-			
+				s_all.show_stdn_info()
+
 			elif i == 3:
 				# log.oper_logger('Вывод информации о контакте')
 				print('-' * 50)
 				print('Вы выбрали "Вывод данных о классе"')
 				print('-' * 50)
 				# показать отдельно класс
-			
+
 			elif i == 4:
 				# log.oper_logger('Возврат в главное меню')
 				print('-' * 50)
@@ -94,25 +97,25 @@ def run():
 				print('-' * 50)
 				print('Вы выбрали "Импортировать в файл"')
 				print('-' * 50)
-				
-				
-			
+
+
+
 			elif i == 2:
 				# log.oper_logger('Возврат в главное меню')
 				print('-' * 50)
 				print("Вернуться в главное меню")
 				print('-' * 50)
 				continue
-			
+
 			elif i == 3:
 				# log.oper_logger('Выход из программы')
 				print('-' * 50)
 				print("Программа завершила работу")
 				print('-' * 50)
 				break
-				
-				
-		
+
+
+
 		elif i == 4:
 			# log.oper_logger('Выход из программы')
 			print('-'*50)
