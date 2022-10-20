@@ -1,5 +1,5 @@
 from sqlite3 import Error
-import querys.crud
+import querys.crud as crud
 import data_provider.user_input as us_in
 
 

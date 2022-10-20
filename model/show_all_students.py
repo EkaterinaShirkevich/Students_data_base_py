@@ -1,5 +1,5 @@
 import data_provider.stdn_manager as st_m
-import querys.crud
+import querys.crud as crud
 
 
 def show_all_info():

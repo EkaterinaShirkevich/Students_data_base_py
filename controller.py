@@ -1,5 +1,6 @@
 import user_interface as us_if
 import input as inp
+import model.add_student as add
 
 
 # запуск приложения
@@ -19,6 +20,7 @@ def run():
 				print('-' * 50)
 				print('Вы выбрали "Создать данные"')
 				print('-' * 50)
+				add.add()
 				# создать данные
 				
 			elif i == 2:
