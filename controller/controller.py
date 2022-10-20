@@ -1,9 +1,10 @@
-import user_interface as us_if
-import input as inp
-
+from user_interface import interface as us_if, input as inp
+from model import cud_students as add_st, get_info as s_all
+from querys import crud
 
 # запуск приложения
 def run():
+	crud.db_create()
 	print('=' * 50)
 	print('Добро пожаловать в нашу базу данных')
 	
@@ -20,6 +21,7 @@ def run():
 				print('Вы выбрали "Создать данные"')
 				print('-' * 50)
 				# создать данные
+				add_st.add()
 				
 			elif i == 2:
 				# log.oper_logger('Изменить данные')
@@ -57,6 +59,7 @@ def run():
 				print('Вы выбрали "Вывод всех данных"')
 				print('-' * 50)
 				# показать все данные
+				s_all.show_all_info()
 			elif i == 2:
 				# log.oper_logger('Вывод информации о контакте')
 				print('-' * 50)

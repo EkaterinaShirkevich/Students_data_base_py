@@ -2,7 +2,7 @@ import sqlite3
 import os.path
 
 db_path = "stdn.db"
-db_schema = "sql_provider/stdn_schema.sql"
+db_schema = "querys/stdn_schema.sql"
 db_is_exists = os.path.exists("stdn.db")
 
 def db_create():
@@ -45,7 +45,7 @@ def get_one():
 	with sqlite3.connect(db_path) as db:
 		cursor = db.cursor()
 		cursor.execute('select class_desc, name, surname, age, status_perf from students')
-		return cursor.fetchone()
+		return cursor.fetchall()
 		
 def get_all():
 	with sqlite3.connect(db_path) as db:
