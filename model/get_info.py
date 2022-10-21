@@ -1,10 +1,11 @@
 from data_provider import user_input as us_in
 import querys.crud as crud
 
+
 # вывод информации о всех учениках
 def show_all_info():
     try:
-        stdn_list = crud.get_all()
+        stdn_list = crud.get_all()  # метод выполняет запрос к БД и возвращает информацию в виде списка кортежей
 
         print('\n')
         print('=' * 72)
@@ -26,7 +27,8 @@ def show_all_info():
 def show_class_by_num():
     class_desc = us_in.check_input_digit('класс', 1, 11)
     try:
-        class_list = crud.get_class(class_desc)
+        class_list = crud.get_class(
+            class_desc)  # метод выполняет запрос к БД и возвращает информацию в виде списка кортежей
     except:
         print('Что-то пошло не так... Возможно такой информации нет в БД.')
 
@@ -42,25 +44,26 @@ def show_class_by_num():
               str(stdn[2]).center(10), '||', stdn[3].center(10), '||')
     print('=' * 60)
 
+
 # вывод информации о ученике
 def show_stdn_info():
     name = us_in.check_input_string('имя')
     surname = us_in.check_input_string('фамилия')
+    class_desc = us_in.check_input_digit('класс', 1, 11)
 
     try:
-        class_desc = us_in.check_input_digit('класс', 1, 11)
+        id = crud.get_id(name, surname, class_desc)
+        stdn = crud.get_one(id)
+
+        print('\n')
+        print('=' * 72)
+        print('||', 'фамилия'.center(10), '||', 'имя'.center(10), '||',
+              'возраст'.center(10), '||', 'класс'.center(10), '||',
+              'статус'.center(10), '||')
+        print('=' * 72)
+        print('||', stdn[1].center(10), '||', stdn[2].center(10), '||',
+              str(stdn[3]).center(10), '||',
+              str(stdn[0]).center(10), '||', stdn[4].center(10), '||')
+        print('=' * 72)
     except:
         print('Что-то пошло не так... Возможно такой информации нет в БД.')
-
-    id = crud.get_id(name, surname, class_desc)
-    stdn = crud.get_one(id)
-    print('\n')
-    print('=' * 72)
-    print('||', 'фамилия'.center(10), '||', 'имя'.center(10), '||',
-          'возраст'.center(10), '||', 'класс'.center(10), '||',
-          'статус'.center(10), '||')
-    print('=' * 72)
-    print('||', stdn[1].center(10), '||', stdn[2].center(10), '||',
-          str(stdn[3]).center(10), '||',
-          str(stdn[0]).center(10), '||', stdn[4].center(10), '||')
-    print('=' * 72)

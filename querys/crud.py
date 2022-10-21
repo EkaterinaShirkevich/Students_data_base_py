@@ -43,7 +43,7 @@ def get_id(name, surname, class_desc):
 def get_one(id):
 	with sqlite3.connect(db_path) as db:
 		cursor = db.cursor()
-		cursor.execute(get_stdn_one, (id,))
+		cursor.execute(get_stdn_one, (id))
 		return cursor.fetchone()
 
 
