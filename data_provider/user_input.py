@@ -30,14 +30,6 @@ def check_input_digit(desc: str, min_val, max_val):
 			continue
 		return val
 
-# ввод данных для меню выбора действий
-def choice_menu_input(max_range):
-	while(True):
-		i = input("Выбрерите один из вариантов работы: ")
-		if i.isdigit() and 1 <= i <= max_range:
-			return int(i)
-		print("Вам надо ввести число")
-
 # выбор статуса ученика
 def status(desc: str):
 	status_list = ("Отличник", "Хорошист", "Троечник", "Двоечник")

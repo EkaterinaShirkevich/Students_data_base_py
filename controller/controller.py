@@ -24,9 +24,9 @@ def run():
 					print('Вы выбрали "Создать данные"')
 					print('-' * 50)
 					# создать данные
-					cud.add()
-					us_if.repeat_menu()
-					i = inp.choice_menu_input(2)
+					cud.add()	# добавляем ученика
+					us_if.repeat_menu()	# меню запроса повторного добавления ученика
+					i = inp.choice_menu_input(2)	# меню выбора
 					if i == 1:
 						continue
 					elif i == 2:
@@ -38,9 +38,9 @@ def run():
 					print('-' * 50)
 					print('Вы выбрали "Изменить данные"')
 					print('-' * 50)
-					cud.update_stdn()
-					us_if.repeat_menu()
-					i = inp.choice_menu_input(2)
+					cud.update_stdn()	# изменения данных о ученике
+					us_if.repeat_menu()		# меню запроса повторного добавления ученика
+					i = inp.choice_menu_input(2)	# меню выбора
 					if i == 1:
 						continue
 					elif i == 2:
@@ -51,9 +51,9 @@ def run():
 					print('-' * 50)
 					print('Вы выбрали "Удалить данные"')
 					print('-' * 50)
-					cud.del_stdn()
-					us_if.repeat_menu()
-					i = inp.choice_menu_input(2)
+					cud.del_stdn()	# удаление ученика
+					us_if.repeat_menu()	# меню запроса повторного добавления ученика
+					i = inp.choice_menu_input(2)	# меню выбора
 					if i == 1:
 						continue
 					elif i == 2:
@@ -88,7 +88,7 @@ def run():
 					print('Вы выбрали "Вывод данных по указанным фамилии и имени"')
 					print('-' * 50)
 					# показать отдельно взятый контакт по имени и фамилии
-					g_i.show_stdn_info()
+					g_i.show_stdn_info() # запрос информации о студенте
 					us_if.repeat_menu()
 					i = inp.choice_menu_input(2)
 					if i == 1:
