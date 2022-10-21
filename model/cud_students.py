@@ -6,12 +6,13 @@ from data_provider import user_input as us_in
 def add():
     stdn = us_in.input_data()
     try:
-        crud.add_stdn_sql(stdn)
+        crud.exec_cud(crud.create, tuple(stdn))
         print('\n')
     except Error:
         print(Error)
 
     stdn_list = crud.get_all()
+    
     print('=' * 50)
     print('||', 'фамилия'.center(10), '||', 'имя'.center(10), '||', 'класс '.center(10), ' ||')
     print('=' * 50)
@@ -25,7 +26,9 @@ def del_stdn():
     name = us_in.check_input_string('имя')
     surname = us_in.check_input_string('фамилия')
     class_desc = us_in.check_input_digit('класс', 1, 11)
-    crud.delete_student(name, surname, class_desc)
+    
+    crud.exec_cud(crud.delete, name, surname, class_desc)
+    
     print('=' * 50)
     print('||', 'фамилия'.center(10), '||', 'имя'.center(10), '||', 'класс '.center(10), ' ||')
     print('=' * 50)
@@ -46,7 +49,8 @@ def update_stdn():
     age = us_in.check_input_digit('возраст', 7, 16)
     status = us_in.check_input_string('статус ученика')
 
-    crud.stdn_update(id, new_class_desc, age, status)
+    crud.exec_cud(crud.update, new_class_desc, age, status, id)
+    
     print('=' * 50)
     print('||', 'фамилия'.center(10), '||', 'имя'.center(10), '||', 'класс '.center(10), ' ||', 'возраст'.center(10), '||', 'статус'.center(10), '||')
 		  

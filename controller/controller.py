@@ -1,6 +1,8 @@
 from user_interface import interface as us_if, input as inp
-from model import cud_students as cud, get_info as s_all
+from model import cud_students as cud
+import model.get_info as g_i
 from querys import crud
+import import_data.to_csv as t_c
 
 # запуск приложения
 def run():
@@ -59,20 +61,21 @@ def run():
 				print('Вы выбрали "Вывод всех данных"')
 				print('-' * 50)
 				# показать все данные
-				s_all.show_all_info()
+				g_i.show_all_info()
 			elif i == 2:
 				# log.oper_logger('Вывод информации о контакте')
 				print('-' * 50)
 				print('Вы выбрали "Вывод данных по указанным фамилии и имени"')
 				print('-' * 50)
 				# показать отдельно взятый контакт по имени и фамилии
-				s_all.show_stdn_info()
+				g_i.show_stdn_info()
 
 			elif i == 3:
 				# log.oper_logger('Вывод информации о контакте')
 				print('-' * 50)
 				print('Вы выбрали "Вывод данных о классе"')
 				print('-' * 50)
+				g_i.show_class_by_num()
 				# показать отдельно класс
 
 			elif i == 4:
@@ -96,7 +99,7 @@ def run():
 				print('-' * 50)
 				print('Вы выбрали "Импортировать в файл"')
 				print('-' * 50)
-
+				t_c.save()
 
 
 			elif i == 2:
