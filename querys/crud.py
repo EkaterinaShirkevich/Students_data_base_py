@@ -8,10 +8,10 @@ db_is_exists = os.path.exists("stdn.db")
 create = "insert into students(class_desc, name, surname, age, status_perf) VALUES (?, ?, ?, ?, ?);"
 delete = "delete from students where name = ? and surname = ? and  class_desc = ?"
 update = "update students set class_desc = ?, age = ?, status_perf = ? where id = ?"
-get_class_info = 'select name, surname, age, status_perf from students where class_desc = ?'
-get_stdn_id = 'select id from students where name = ? and surname = ? and class_desc = ?'
-get_stdn_one = 'select class_desc, name, surname, age, status_perf from students where id = ?'
-get_stdn_all = 'select class_desc, name, surname, age, status_perf from students'
+get_class_info = "select name, surname, age, status_perf from students where class_desc = ?"
+get_stdn_id = "select id from students where name = ? and surname = ? and class_desc = ?"
+get_stdn_one = "select class_desc, name, surname, age, status_perf from students where id = ?"
+get_stdn_all = "select class_desc, name, surname, age, status_perf from students"
 
 def db_create():
 	if not db_is_exists:

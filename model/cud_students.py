@@ -6,7 +6,7 @@ from data_provider import user_input as us_in
 def add():
     stdn = us_in.input_data()
     try:
-        crud.exec_cud(crud.create, tuple(stdn))
+        crud.exec_cud(crud.create, stdn)
         print('\n')
     except Error:
         print(Error)
@@ -27,7 +27,7 @@ def del_stdn():
     surname = us_in.check_input_string('фамилия')
     class_desc = us_in.check_input_digit('класс', 1, 11)
     
-    crud.exec_cud(crud.delete, name, surname, class_desc)
+    crud.exec_cud(crud.delete, (name, surname, class_desc))
     
     print('=' * 50)
     print('||', 'фамилия'.center(10), '||', 'имя'.center(10), '||', 'класс '.center(10), ' ||')
@@ -49,7 +49,7 @@ def update_stdn():
     age = us_in.check_input_digit('возраст', 7, 16)
     status = us_in.check_input_string('статус ученика')
 
-    crud.exec_cud(crud.update, new_class_desc, age, status, id)
+    crud.exec_cud(crud.update, (new_class_desc, age, status, id))
     
     print('=' * 50)
     print('||', 'фамилия'.center(10), '||', 'имя'.center(10), '||', 'класс '.center(10), ' ||')
