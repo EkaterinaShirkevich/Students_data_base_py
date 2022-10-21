@@ -18,12 +18,18 @@ def run():
 			us_if.menu_data_actions()   # меню действий с контактов(создание/удаление)
 			i = inp.choice_menu_input(5)	# ввод выбора действия
 			if i == 1:
-				# log.oper_logger('Создать данные')
-				print('-' * 50)
-				print('Вы выбрали "Создать данные"')
-				print('-' * 50)
-				# создать данные
-				cud.add()
+				while(True):# log.oper_logger('Создать данные')
+					print('-' * 50)
+					print('Вы выбрали "Создать данные"')
+					print('-' * 50)
+					# создать данные
+					cud.add()
+					us_if.repeat_menu()
+					i = inp.choice_menu_input(2)
+					if i == 1:
+						continue
+					elif i == 2:
+						break
 
 			elif i == 2:
 				while(True):
