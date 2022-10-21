@@ -26,18 +26,31 @@ def run():
 				cud.add()
 
 			elif i == 2:
-				# log.oper_logger('Изменить данные')
-				print('-' * 50)
-				print('Вы выбрали "Изменить данные"')
-				print('-' * 50)
-				cud.update_stdn()
+				while(True):
+				    # log.oper_logger('Изменить данные')
+					print('-' * 50)
+					print('Вы выбрали "Изменить данные"')
+					print('-' * 50)
+					cud.update_stdn()
+					us_if.repeat_menu()
+					i = inp.choice_menu_input(2)
+					if i == 1:
+						continue
+					elif i == 2:
+						break
 
 			elif i == 3:
-				# log.oper_logger('Удалить данные')
-				print('-' * 50)
-				print('Вы выбрали "Удалить данные"')
-				print('-' * 50)
-				cud.del_stdn()
+				while(True):# log.oper_logger('Удалить данные')
+					print('-' * 50)
+					print('Вы выбрали "Удалить данные"')
+					print('-' * 50)
+					cud.del_stdn()
+					us_if.repeat_menu()
+					i = inp.choice_menu_input(2)
+					if i == 1:
+						continue
+					elif i == 2:
+						break
 
 			elif i == 4:
 				# log.oper_logger('Возврат в главное меню')
@@ -63,20 +76,33 @@ def run():
 				# показать все данные
 				g_i.show_all_info()
 			elif i == 2:
-				# log.oper_logger('Вывод информации о контакте')
-				print('-' * 50)
-				print('Вы выбрали "Вывод данных по указанным фамилии и имени"')
-				print('-' * 50)
-				# показать отдельно взятый контакт по имени и фамилии
-				g_i.show_stdn_info()
+				while(True):# log.oper_logger('Вывод информации о контакте')
+					print('-' * 50)
+					print('Вы выбрали "Вывод данных по указанным фамилии и имени"')
+					print('-' * 50)
+					# показать отдельно взятый контакт по имени и фамилии
+					g_i.show_stdn_info()
+					us_if.repeat_menu()
+					i = inp.choice_menu_input(2)
+					if i == 1:
+						continue
+					elif i == 2:
+						break
 
 			elif i == 3:
-				# log.oper_logger('Вывод информации о контакте')
-				print('-' * 50)
-				print('Вы выбрали "Вывод данных о классе"')
-				print('-' * 50)
-				g_i.show_class_by_num()
-				# показать отдельно класс
+				while(True):# log.oper_logger('Вывод информации о контакте')
+					print('-' * 50)
+					print('Вы выбрали "Вывод данных о классе"')
+					print('-' * 50)
+					g_i.show_class_by_num()
+					# показать отдельно класс
+					us_if.repeat_menu()
+					i = inp.choice_menu_input(2)
+					if i == 1:
+						continue
+					elif i == 2:
+						break
+			
 
 			elif i == 4:
 				# log.oper_logger('Возврат в главное меню')
@@ -125,4 +151,4 @@ def run():
 			print('-'*50)
 			break
 
-run()
+# run()
