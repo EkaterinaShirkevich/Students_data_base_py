@@ -18,7 +18,8 @@ def run():
 			us_if.menu_data_actions()   # меню действий с контактов(создание/удаление)
 			i = inp.choice_menu_input(5)	# ввод выбора действия
 			if i == 1:
-				while(True):# log.oper_logger('Создать данные')
+				while(True):
+					# log.oper_logger('Создать данные')
 					print('-' * 50)
 					print('Вы выбрали "Создать данные"')
 					print('-' * 50)
