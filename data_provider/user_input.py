@@ -7,7 +7,7 @@ def input_data():
 	name = check_input_string('имя')
 	surname = check_input_string('фамилия')
 	age = check_input_digit('возраст', 7, 16)
-	rating_status = check_input_string('статус ученика')
+	rating_status = status('статус ученика')
 	return (class_desc, name, surname, age, rating_status)
 
 # ввод данных и проверка строковых данных(оптимизация кода)
@@ -37,3 +37,28 @@ def choice_menu_input(max_range):
 		if i.isdigit() and 1 <= i <= max_range:
 			return int(i)
 		print("Вам надо ввести число")
+
+def status(desc: str):
+	status_list = ("Отличник", "Хорошист", "Троечник", "Двоечник")
+
+
+	while (True):
+		print(f"""Выберите один из вариантов в значения поле '{desc}':
+						5. Отличник
+						4. Хорошист
+						3. Троечник
+						2. Двоечник
+						""")
+		i = input(">>> ")
+		if not i.isdigit() or not (2 <= int(i) <= 5):
+			continue
+			print("Вам надо ввести число от 2 до 5")
+
+		elif i == "5":
+			return status_list[0]
+		elif i == "4":
+			return status_list[1]
+		elif i == "3":
+			return status_list[2]
+		elif i == "2":
+			return status_list[3]
