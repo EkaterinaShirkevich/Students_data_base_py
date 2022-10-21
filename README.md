@@ -11,7 +11,7 @@
 ### ***Участники проекта:***  
 * https://github.com/Sh1rsh1n - *разработка* 
 * https://github.com/Marassanovad - *разработка*
-* https://github.com/IrinaSuvorova - *разработка БД*
+* https://github.com/IrinaSuvorova - *проектирование БД*
 * https://github.com/Alexey1992Astakhov - *контрольное тестирование*
 * https://github.com/EkaterinaShirkevich - *менеджмент проекта, промежуточное тестирование*
 
