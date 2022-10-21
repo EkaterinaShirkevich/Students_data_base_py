@@ -61,7 +61,9 @@ def update_stdn():
     print('=' * 72)
     print('||', 'фамилия'.center(10), '||', 'имя'.center(10), '||', 'класс '.center(10), ' ||')
     print('=' * 72)
+
     print('||', name.center(10), '||', surname.center(10), '||', str(new_class_desc).center(10),
           '||', age.center(10), '||', status.center(10), '||')
     print('=' * 72)
     print('||', "Данные о ученике успешно изменены.".center(10), '||')
+

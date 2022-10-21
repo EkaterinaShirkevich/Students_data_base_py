@@ -27,11 +27,18 @@ def import_menu():
 	print('2. Вернуться в главное меню')
 	print('3. Выход из программы')
 
-
-def error():
+def repeat_menu():
+	print('=' * 50)
+	print('Варианты работы программы')
 	print('-' * 50)
-	print('------ Ошибка -------')
-	print('-' * 50)
+	print('1. Повторить действие')
+	print('2. Вернуться в главное меню')
+	
+	
+# def error():
+# 	print('-' * 50)
+# 	print('------ Ошибка -------')
+# 	print('-' * 50)
 
 
 def menu_data_actions():
